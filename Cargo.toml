@@ -1,0 +1,24 @@
+[package]
+name = "logtripwire"
+version = "0.1.0"
+edition = "2021"
+description = "Tails a log file live and fires an alert, a shell command, or a nonzero exit when a pattern occurs N times within a rolling time window — swatch/logwatch (Perl) for simple on-call alerting with no SIEM"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/logtripwire"
+readme = "README.md"
+keywords = ["log-monitoring", "swatch", "alerting", "cli", "tail"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "logtripwire"
+path = "src/lib.rs"
+
+[[bin]]
+name = "logtripwire"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+regex = "1"
